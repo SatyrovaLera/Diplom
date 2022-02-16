@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">   
+    <link rel="stylesheet" href="css/header.css">    
+    <link rel="stylesheet" href="css/sectionOne.css">
+    <link rel="stylesheet" href="css/footerCover.css">
+    <link rel="stylesheet" href="css/aboutSection.css">
+    <link rel="stylesheet" href="css/forecastSection.css">
+    <link rel="stylesheet" href="css/favoritesSection.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header__body">
+            <div class="header__langWrapper">
+                <div class="header__language translate lang-ru" id="ru">RU</div>
+                <div class="header__language translate lang-en" id="en">EN</div>
+            </div>           
+            <div class="header__burger">
+                <span></span>
+            </div>
+            <nav class="header__menu">
+                <ul class="header__list">
+                    <li>
+                        <a href="#about" class="header__link lang" key="about">about</a>
+                    </li>
+                    <li>
+                        <a href="#forecast" class="header__link lang" key="forecast">forecast</a>
+                    </li>
+                    <li>
+                        <a href="#favorites" class="header__link lang" key="favorites">favorites</a>
+                    </li>                   
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="primaryCover">
+        <h1 class="primaryCover__header lang">WEATHER</h1>
+    </section> 
+
+    <section class="aboutSection">
+        <div class="aboutSection__wrapper">
+            <a href="" name="about"></a>
+            <h2 class="aboutSection__header lang anim-items anim-no-hide" key="aboutSectionheader">about our site</h2>
+            <div class="aboutSection__base">
+                <div class="aboutSection__paragraph--wrapper anim-items anim-no-hide">
+                    <p class="aboutSection__paragraph lang" key="paragpaph1">This site presents observations of the weather, its forecasts for all cities of the world. In this version, weather
+                    icons are shown next to textual forecasts for easier visual reference.</p>
+                    <p class="aboutSection__paragraph lang" key="paragpaph2">In the "Forecast" section, it is possible to search for a weather forecast for a specific city, weather data at a given
+                    time will be displayed, this information will be the most extended, as well as weather data for 5 days, which indicates
+                    the minimum and maximum temperatures on that day.
+                    </p>
+                    <p class="aboutSection__paragraph lang" key="paragpaph3">You have the opportunity to add the cities you like and the necessary cities to your favorites, where in the section
+                    with the same name you can view the weather for all saved cities at once.</p>
+                    <p class="aboutSection__paragraph lang" key="paragpaph4">The media are allowed to make the information presented on this
+                    website available to the public. V
+                    In this case, reference should be made to this source.</p>
+                    <p class="aboutSection__paragraph lang" key="paragpaph5">Site navigation is represented by a "cobweb", that is, you can go to any other
+                    section, being in the selected one, as well as from the "Favorites" section, you will go to the "footer" of the site,
+                    which contains
+                    minimum information.</p>
+                </div>                
+                <img src="/images/footer2.jpg" alt="" class="aboutSection__image anim-items anim-no-hide">
+            </div>
+        </div>        
+    </section>
+
+    <section class="forecastSection">
+        <a href="" name="forecast"></a>
+        <div class="forecastSection__search">
+            <input type="text" value="Бобруйск" class="input__search"
+                onfocus="if (this.value == 'Search city') {this.value = '';}"
+                onblur="if (this.value == '') {this.value = 'Search city';}">
+            <button class="button__search">SEARCH</button>
+        </div>
+            <div class="weather__block">
+                <div class="weather__block-title">
+                    <div class="block__title">
+                        <p class="title__city"></p>
+                        <span class="title__date"></span>
+                    </div>
+                    <button class="addfavorite__button"><img src="images/heartAdd.png" alt="" class="favoritesadd__img"
+                            id="favoritesAddimg">
+                    </button>
+                </div>
+                <div class="weather__block-today">
+                    <div class="block__today-title">
+                        <p class="block__today-degree"></p>
+                        <div class="block__today-overcast">
+                            <p class="block__today-forecast"></p>
+                            <img src="" alt="weather" class="block__today-image">
+                        </div>
+                        <div class="block__today-sun">
+                            <div class="sun__sunrise">
+                                <img src="images/sunrise.png" alt="">
+                                <p class="sunrisetitle"></p>
+                            </div>
+                            <div class="sunset">
+                                <img src="images/sunset.png" alt="">
+                                <p class="sunsettitle"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block__today-description">
+                        <p class="block__today-fells"></p>
+                        <p class="block__today-wind"></p>
+                        <p class="block__today-humidity"></p>
+                        <p class="block__today-pressure"></p>
+                    </div>                                      
+                </div>  
+                <div id="map" class="map"></div>
+                <div class="weather__block-nextdays">
+                    <div class="block-nextdays__item">
+                        <p class="block-nextdays__item-title" id="day1"></p>
+                        <div class="block-nextdays__item-description">
+                            <span class="block-nextdays__item-degreemax" id="day1Max"></span>
+                            <span class="block-nextdays__item-degreemin" id="day1Min"></span>
+                            <img src="" alt="image" id="img1" class="block-nextdays__item-img">
+                        </div>
+                    </div>
+                    <div class="block-nextdays__item">
+                        <p class="block-nextdays__item-title" id="day2"></p>
+                        <div class="block-nextdays__item-description">
+                            <span class="block-nextdays__item-degreemax" id="day2Max"></span>
+                            <span class="block-nextdays__item-degreemin" id="day2Min"></span>
+                            <img src="" alt="image" id="img2" class="block-nextdays__item-img">
+                        </div>
+                    </div>
+                    <div class="block-nextdays__item">
+                        <p class="block-nextdays__item-title" id="day3"></p>
+                        <div class="block-nextdays__item-description">
+                            <span class="block-nextdays__item-degreemax" id="day3Max"></span>
+                            <span class="block-nextdays__item-degreemin" id="day3Min"></span>
+                            <img src="" alt="image" id="img3" class="block-nextdays__item-img">
+                        </div>
+                    </div>
+                    <div class="block-nextdays__item">
+                        <p class="block-nextdays__item-title" id="day4"></p>
+                        <div class="block-nextdays__item-description">
+                            <span class="block-nextdays__item-degreemax" id="day4Max"></span>
+                            <span class="block-nextdays__item-degreemin" id="day4Min"></span>
+                            <img src="" alt="image" id="img4" class="block-nextdays__item-img">
+                        </div>
+                    </div>
+                    <div class="block-nextdays__item">
+                        <p class="block-nextdays__item-title" id="day5"></p>
+                        <div class="block-nextdays__item-description">
+                            <span class="block-nextdays__item-degreemax" id="day5Max"></span>
+                            <span class="block-nextdays__item-degreemin" id="day5Min"></span>
+                            <img src="" alt="image" id="img5" class="block-nextdays__item-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="favoritesSection">
+        <a href="" name="favorites"></a>
+    </section>
+
+    <footer class="footerCover">
+
+    </footer>
+
+    <a href="#" class="scrollup">Наверх</a>
+
+    <script src="source/js/menu.js"></script>
+    <script src="source/js/burger.js"></script>    
+    <script src="source/js/buttonUp.js"></script> 
+    <script src="source/js/animation.js"></script>    
+    <script src="source/js/langjquery.min.js"></script>     
+    <script src="source/js/forecastSection.js"></script>
+   
+</body>
+</html>

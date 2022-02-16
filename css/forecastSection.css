@@ -1,0 +1,199 @@
+.input__search {
+  background: rgba(43, 87, 42, 0.5);
+  border: 1px solid rgba(44, 45, 66, 0.034);
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding: 13px 58px 13px 15px;
+  -webkit-font-feature-settings: "cpsp" on;
+          font-feature-settings: "cpsp" on;
+  outline: none;
+}
+
+.map {
+  width: 100%;
+  height: 160px;
+}
+
+.button__search {
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 13.38px 20px 13.38px 20px;
+  font-weight: bold;
+  width: 100px;
+  opacity: 1;
+  border: 1px solid rgba(44, 45, 66, 0.034);
+  background: rgba(77, 116, 76, 0.4);
+}
+
+.addfavorite__button {
+  padding: 7px;
+  background: none;
+}
+
+.favoritesadd__img {
+  width: 30px;
+  height: 30px;
+}
+
+.forecastSection {
+  height: 100vh;
+  background-color: rgba(77, 116, 76, 0.8);
+  padding: 150px;
+}
+.forecastSection__search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 75%;
+}
+
+.title__city {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 54px;
+}
+.title__date {
+  margin-top: 4px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.weather__block {
+  padding: 50px;
+  padding-top: 25px;
+}
+.weather__block-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.weather__block-nextdays {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 55px;
+}
+.weather__block-today {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.block__today-degree {
+  font-size: 206px;
+  line-height: 206px;
+}
+.block__today-description {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  opacity: 0.9;
+  background-color: rgba(77, 116, 76, 0.3);
+  border-radius: 30px;
+  padding: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.block__today-image {
+  width: 96px;
+  height: 96px;
+}
+.block__today-overcast {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.block__today-sun {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 5px;
+}
+.block__today-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(77, 116, 76, 0.3);
+  border-radius: 30px;
+  padding: 25px;
+}
+.block__today-wind, .block__today-pressure, .block__today-humidity, .block__today-forecast, .block__today-fells {
+  font-size: 30px;
+  line-height: 37px;
+  font-weight: bold;
+}
+.block__today-wind, .block__today-pressure, .block__today-humidity {
+  margin-top: 32px;
+}
+
+.block-nextdays__item {
+  border-radius: 10px;
+  background-color: rgba(77, 116, 76, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  width: 150px;
+}
+.block-nextdays__item-degreemax, .block-nextdays__item-degreemin {
+  font-size: 22px;
+}
+.block-nextdays__item-degreemin {
+  color: #000000;
+  opacity: 0.7;
+  padding-left: 8px;
+}
+.block-nextdays__item-description {
+  text-align: center;
+  margin-top: 8px;
+}
+.block-nextdays__item-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
