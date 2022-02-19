@@ -21,6 +21,7 @@
   opacity: 1;
   border: 1px solid rgba(44, 45, 66, 0.034);
   background: rgba(77, 116, 76, 0.4);
+  text-transform: uppercase;
 }
 
 .addfavorite__button {
@@ -31,6 +32,12 @@
 .favoritesadd__img {
   width: 30px;
   height: 30px;
+}
+
+.fells__value, .wind__value, .humidity__value, .pressure__value {
+  font-size: 30px;
+  line-height: 37px;
+  font-weight: bold;
 }
 
 .forecastSection {
@@ -100,18 +107,7 @@
           justify-content: space-between;
 }
 
-.block__today-degree {
-  font-size: 206px;
-  line-height: 206px;
-}
-.block__today-description {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  opacity: 0.9;
-  background-color: rgba(77, 116, 76, 0.3);
-  border-radius: 30px;
-  padding: 90px;
+.sun__sunrise, .sun__sunset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,6 +115,40 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.block__today-degree {
+  font-size: 206px;
+  line-height: 206px;
+}
+.block__today-description {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0px 70px;
+  height: 426px;
+  width: 578.26px;
+  opacity: 0.9;
+  background-color: rgba(77, 116, 76, 0.3);
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.block__today-description > *:not(:last-child) {
+  margin-bottom: 37px;
 }
 .block__today-image {
   width: 96px;
@@ -162,9 +192,6 @@
   line-height: 37px;
   font-weight: bold;
 }
-.block__today-wind, .block__today-pressure, .block__today-humidity {
-  margin-top: 32px;
-}
 
 .block-nextdays__item {
   border-radius: 10px;
@@ -196,4 +223,16 @@
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 10px;
+}
+
+.df {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }

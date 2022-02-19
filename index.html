@@ -18,73 +18,81 @@
     <link rel="stylesheet" href="css/favoritesSection.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
-    <title>Document</title>
+    <title>Weather</title>
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="header__body">
-            <div class="header__langWrapper">
-                <div class="header__language translate lang-ru" id="ru">RU</div>
-                <div class="header__language translate lang-en" id="en">EN</div>
-            </div>           
-            <div class="header__burger">
-                <span></span>
+    <div class="wrapper">
+        <header class="header" id="header">
+            <div class="header__body">
+                <div class="header__langWrapper">
+                    <div class="header__language translate lang-ru" id="ru">RU</div>
+                    <div class="header__language translate lang-en" id="en">EN</div>
+                </div>
+                <div class="header__burger">
+                    <span></span>
+                </div>
+                <nav class="header__menu">
+                    <ul class="header__list">
+                        <li>
+                            <a href="#about" class="header__link lang" key="about">about</a>
+                        </li>
+                        <li>
+                            <a href="#forecast" class="header__link lang" key="forecast">forecast</a>
+                        </li>
+                        <li>
+                            <a href="#favorites" class="header__link lang" key="favorites">favorites</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="header__menu">
-                <ul class="header__list">
-                    <li>
-                        <a href="#about" class="header__link lang" key="about">about</a>
-                    </li>
-                    <li>
-                        <a href="#forecast" class="header__link lang" key="forecast">forecast</a>
-                    </li>
-                    <li>
-                        <a href="#favorites" class="header__link lang" key="favorites">favorites</a>
-                    </li>                   
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="primaryCover">
-        <h1 class="primaryCover__header lang">WEATHER</h1>
-    </section> 
-
-    <section class="aboutSection">
-        <div class="aboutSection__wrapper">
-            <a href="" name="about"></a>
-            <h2 class="aboutSection__header lang anim-items anim-no-hide" key="aboutSectionheader">about our site</h2>
-            <div class="aboutSection__base">
-                <div class="aboutSection__paragraph--wrapper anim-items anim-no-hide">
-                    <p class="aboutSection__paragraph lang" key="paragpaph1">This site presents observations of the weather, its forecasts for all cities of the world. In this version, weather
-                    icons are shown next to textual forecasts for easier visual reference.</p>
-                    <p class="aboutSection__paragraph lang" key="paragpaph2">In the "Forecast" section, it is possible to search for a weather forecast for a specific city, weather data at a given
-                    time will be displayed, this information will be the most extended, as well as weather data for 5 days, which indicates
-                    the minimum and maximum temperatures on that day.
-                    </p>
-                    <p class="aboutSection__paragraph lang" key="paragpaph3">You have the opportunity to add the cities you like and the necessary cities to your favorites, where in the section
-                    with the same name you can view the weather for all saved cities at once.</p>
-                    <p class="aboutSection__paragraph lang" key="paragpaph4">The media are allowed to make the information presented on this
-                    website available to the public. V
-                    In this case, reference should be made to this source.</p>
-                    <p class="aboutSection__paragraph lang" key="paragpaph5">Site navigation is represented by a "cobweb", that is, you can go to any other
-                    section, being in the selected one, as well as from the "Favorites" section, you will go to the "footer" of the site,
-                    which contains
-                    minimum information.</p>
-                </div>                
-                <img src="/images/footer2.jpg" alt="" class="aboutSection__image anim-items anim-no-hide">
+        </header>     
+        
+        <section class="primaryCover">
+            <h1 class="primaryCover__header lang">WEATHER</h1>
+        </section>
+        
+        <section class="aboutSection">
+            <div class="aboutSection__wrapper">
+                <a href="" name="about"></a>
+                <h2 class="aboutSection__header lang anim-items anim-no-hide" key="aboutSectionheader">about our site</h2>
+                <div class="aboutSection__base">
+                    <div class="aboutSection__paragraph--wrapper anim-items anim-no-hide">
+                        <p class="aboutSection__paragraph lang" key="paragpaph1">This site presents observations of the weather,
+                            its forecasts for all cities of the world. In this version, weather
+                            icons are shown next to textual forecasts for easier visual reference.</p>
+                        <p class="aboutSection__paragraph lang" key="paragpaph2">In the "Forecast" section, it is possible to
+                            search for a weather forecast for a specific city, weather data at a given
+                            time will be displayed, this information will be the most extended, as well as weather data for 5
+                            days, which indicates
+                            the minimum and maximum temperatures on that day.
+                        </p>
+                        <p class="aboutSection__paragraph lang" key="paragpaph3">You have the opportunity to add the cities you
+                            like and the necessary cities to your favorites, where in the section
+                            with the same name you can view the weather for all saved cities at once.</p>
+                        <p class="aboutSection__paragraph lang" key="paragpaph4">The media are allowed to make the information
+                            presented on this
+                            website available to the public. V
+                            In this case, reference should be made to this source.</p>
+                        <p class="aboutSection__paragraph lang" key="paragpaph5">Site navigation is represented by a "cobweb",
+                            that is, you can go to any other
+                            section, being in the selected one, as well as from the "Favorites" section, you will go to the
+                            "footer" of the site,
+                            which contains
+                            minimum information.</p>
+                    </div>
+                    <img src="images/footer2.jpg" class="aboutSection__image anim-items anim-no-hide">
+                </div>
             </div>
-        </div>        
-    </section>
-
-    <section class="forecastSection">
-        <a href="" name="forecast"></a>
-        <div class="forecastSection__search">
-            <input type="text" value="Бобруйск" class="input__search"
-                onfocus="if (this.value == 'Search city') {this.value = '';}"
-                onblur="if (this.value == '') {this.value = 'Search city';}">
-            <button class="button__search">SEARCH</button>
-        </div>
+        </section>
+        
+        <section class="forecastSection">
+            <a href="" name="forecast"></a>
+            <div class="forecastSection__search">
+                <input type="text" value="Бобруйск" class="input__search"
+                    onfocus="if (this.value == 'Search city') {this.value = '';}"
+                    onblur="if (this.value == '') {this.value = 'Search city';}">
+                <button class="button__search lang" key="search">SEARCH</button>
+            </div>
             <div class="weather__block">
                 <div class="weather__block-title">
                     <div class="block__title">
@@ -107,20 +115,20 @@
                                 <img src="images/sunrise.png" alt="">
                                 <p class="sunrisetitle"></p>
                             </div>
-                            <div class="sunset">
+                            <div class="sun__sunset">
                                 <img src="images/sunset.png" alt="">
                                 <p class="sunsettitle"></p>
                             </div>
                         </div>
                     </div>
                     <div class="block__today-description">
-                        <p class="block__today-fells"></p>
-                        <p class="block__today-wind"></p>
-                        <p class="block__today-humidity"></p>
-                        <p class="block__today-pressure"></p>
-                    </div>                                      
-                </div>  
-                <div id="map" class="map"></div>
+                        <div class="df"><p class="block__today-fells lang" key="fells">fells like (°): </p><p class="fells__value"></p></div>
+                        <div class="df"><p class="block__today-wind lang" key="wind">wind (m/s): </p><p class="wind__value"></p></div>
+                        <div class="df"><p class="block__today-humidity lang" key="humidity">humidity (%): </p><p class="humidity__value"></p></div>
+                        <div class="df"><p class="block__today-pressure lang" key="pressure">pressure (mBar): </p><p class="pressure__value"></p></div>
+                    </div>
+                </div>
+                <!--<div id="map" class="map"></div>-->
                 <div class="weather__block-nextdays">
                     <div class="block-nextdays__item">
                         <p class="block-nextdays__item-title" id="day1"></p>
@@ -164,15 +172,22 @@
                     </div>
                 </div>
             </div>
-    </section>
-
-    <section class="favoritesSection">
-        <a href="" name="favorites"></a>
-    </section>
-
-    <footer class="footerCover">
-
-    </footer>
+        </section>
+        
+        <section class="favoritesSection">
+            <a href="" name="favorites"></a>
+        </section>
+        
+        <footer class="footerCover">
+            <div class="footer__bottom">
+                <div class="footer__container container">
+                    <div class="footer__copy">
+                        Made With Love. All Right Reserved &copy;
+                    </div>                    
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <a href="#" class="scrollup">Наверх</a>
 
@@ -182,6 +197,5 @@
     <script src="source/js/animation.js"></script>    
     <script src="source/js/langjquery.min.js"></script>     
     <script src="source/js/forecastSection.js"></script>
-   
 </body>
 </html>

@@ -29,6 +29,7 @@ $black-color: #000000;
     opacity: 1;
     border: 1px solid $bg-button-dark;
     background: $bg-button-search;
+    text-transform: uppercase;
 }
 
 .addfavorite__button {
@@ -39,6 +40,12 @@ $black-color: #000000;
 .favoritesadd__img {
     width: 30px;
     height: 30px;
+}
+
+.fells__value, .wind__value, .humidity__value, .pressure__value{
+    font-size: 30px;
+    line-height: 37px;
+    font-weight: bold;
 }
 
 .forecastSection{
@@ -95,6 +102,15 @@ $black-color: #000000;
     }
 }
 
+.sun{
+    &__sunrise, &__sunset{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 .block__today{ 
     &-degree{
         font-size: 206px;
@@ -102,13 +118,20 @@ $black-color: #000000;
     }
 
     &-description{
-        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0px 70px;
+        height: 426px;
+        width: 578.26px;
         opacity: 0.9;
         background-color: $bg-color-title;
         border-radius: 30px;
-        padding: 90px;
-        display: flex;   
-        flex-direction: column;     
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &-description>*:not(:last-child){
+        margin-bottom: 37px;
     }
 
     &-image{
@@ -140,11 +163,7 @@ $black-color: #000000;
     &-wind, &-pressure, &-humidity, &-forecast,  &-fells{
         font-size: 30px;
         line-height: 37px;
-        font-weight: bold;
-    }
-
-    &-wind, &-pressure, &-humidity{
-        margin-top: 32px;
+        font-weight: bold; 
     }
 }
 
@@ -179,4 +198,10 @@ $black-color: #000000;
             margin-bottom: 10px;
         }
     }
+}
+
+.df{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

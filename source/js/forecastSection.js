@@ -8,13 +8,13 @@ const forecastName = document.querySelector('.block__today-forecast');
 
 const degreeValue = document.querySelector('.block__today-degree');
 
-const humidityValue = document.querySelector('.block__today-humidity');
+const humidityValue = document.querySelector('.humidity__value');
 
-const pressureValue = document.querySelector('.block__today-pressure');
+const pressureValue = document.querySelector('.pressure__value');
 
-const windValue = document.querySelector('.block__today-wind');
+const windValue = document.querySelector('.wind__value');
 
-const fellsLikeValue = document.querySelector('.block__today-fells');
+const fellsLikeValue = document.querySelector('.fells__value');
 
 const imageWeather = document.querySelector('.block__today-image');
 
@@ -46,14 +46,8 @@ const weather = {
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
   },
-  fetchWeatherfiveday(city) {
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${this.apiKey}`)
-      .then((response) => response.json())
-      .then((data) => this.displayWeather(data));
-  },
   displayWeather(data) {
     const { name } = data;
-    const { lon, lat } = data.coord;
     const { icon, description } = data.weather[0];
     // eslint-disable-next-line camelcase
     const { temp, humidity, feels_like, pressure } = data.main;
@@ -62,16 +56,26 @@ const weather = {
     cityName.innerText = name;
     forecastName.innerText = description;
     degreeValue.innerText = `${temp}°`;
-    humidityValue.innerText = `Humidity: ${humidity} %`;
-    windValue.innerText = `Wind: ${speed} m/s`;
+    humidityValue.innerText = humidity;
+    windValue.innerText = speed;
     // eslint-disable-next-line camelcase
-    fellsLikeValue.innerText = `Feels like: ${feels_like}°`;
-    pressureValue.innerText = `Pressure: ${pressure} mBar`;
+    fellsLikeValue.innerText = feels_like;
+    pressureValue.innerText = pressure;
     sunriseValue.innerText = `${Translatingunix(sunrise)} AM`;
     sunsetValue.innerText = `${Translatingunix(sunset)} PM`;
+    document.getElementById('ru').addEventListener('click', () => {
+      sunriseValue.innerHTML = `Восход: ${Translatingunix(sunrise)}`;
+      sunsetValue.innerText = `Заход: ${Translatingunix(sunset)}`;
+      if (forecastName.textContent == 'overcast clouds') forecastName.textContent = 'облачно';
+    });
+    document.getElementById('en').addEventListener('click', () => {
+      sunriseValue.innerText = `${Translatingunix(sunrise)} AM`;
+      sunsetValue.innerText = `${Translatingunix(sunset)} PM`;
+      if (forecastName.textContent == 'облачно') forecastName.textContent = 'overcast clouds';
+    });
     imageWeather.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     document.querySelector('.weather__block').classList.remove('loading');
-    ymaps.ready(init);
+    /*ymaps.ready(init);
 
     function init() {
       var map = new ymaps.Map('map', {
@@ -80,14 +84,14 @@ const weather = {
         controls: ['zoomControl'],
         behaviors: ['drag'],
       });     
-    }
+    }*/
   },
   search() {
     this.fetchWeather(document.querySelector('.input__search').value);
   },
 };
 
-// Создаем объект погоды на следубщие дни.
+// Создаем объект погоды на следующие дни.
 const weatherfivedays = {
   apiKey: '37d7407e803931d21a78b0be6f1e8fdb',
   fetchWeatherfiveday(city) {

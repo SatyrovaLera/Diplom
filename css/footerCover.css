@@ -1,4 +1,16 @@
-.footerCover {
-  background-color: aqua;
-  height: 20vh;
+.footer__bottom {
+  background-color: rgba(43, 85, 43, 0.9);
+  height: 9vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer__container {
+  width: 100%;
+}
+.footer__copy {
+  font-size: 15px;
 }

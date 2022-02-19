@@ -112,7 +112,7 @@ $white-color:#fff;
 
 @media (max-width:767px) {
     .header{
-         background-color: rgba(26, 97, 26, 0.5);
+        background-color: rgba(26, 97, 26, 0.5);
         &__burger {
             display: block;
             position: relative;
@@ -149,7 +149,7 @@ $white-color:#fff;
             }
         }
 
-        &__body {
+        &__body {    
             height: 50px;
             padding: 0 10px;           
         }
@@ -186,5 +186,20 @@ $white-color:#fff;
         
     body.lock{
         overflow: hidden;
+    }
+}
+
+#ru, #en{
+    transition: all 0.3s ease 0s;
+}
+
+#ru:hover, #en:hover{
+    color: #b0ddbb;
+}
+
+@media(max-width:1060px){
+    .header{
+        box-sizing: border-box;
+        padding-top: 15px;
     }
 }

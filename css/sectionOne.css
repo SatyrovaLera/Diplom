@@ -20,4 +20,39 @@
   font-family: "Monserat", sans-serif;
   font-size: 50px;
   letter-spacing: 55px;
+  margin-left: 55px;
+}
+
+@media (max-width: 1440px) {
+  .primaryCover {
+    height: 80vh;
+  }
+}
+@media (max-width: 767px) {
+  .primaryCover {
+    height: 50vh;
+  }
+}
+@media (max-width: 640px) {
+  .primaryCover__header {
+    font-size: 45px;
+    letter-spacing: 50px;
+  }
+}
+@media (max-width: 570px) {
+  .primaryCover__header {
+    font-size: 35px;
+    letter-spacing: 40px;
+  }
+}
+@media (max-width: 475px) {
+  .primaryCover__header {
+    font-size: 25px;
+    letter-spacing: 30px;
+  }
+}
+@media (max-width: 325px) {
+  .primaryCover__header {
+    margin-right: 25px;
+  }
 }

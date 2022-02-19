@@ -1,4 +1,19 @@
-.footerCover{
-    background-color: aqua;
-    height: 20vh;
+$white-color: #fff;
+$bg-color: rgba(43, 85, 43, 0.9);
+
+.footer{
+    &__bottom{
+        background-color: $bg-color;
+        height: 9vh;  
+        display: flex;
+        align-items: center;  
+    }
+
+    &__container{
+        width: 100%;
+    }     
+
+    &__copy{
+        font-size: 15px;
+    }
 }
