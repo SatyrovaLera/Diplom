@@ -3,10 +3,9 @@
 }
 
 .header {
+  padding: 20px 0px 0px 0px;
   position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
   z-index: 50;
 }
 .header::before {
@@ -32,7 +31,6 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 50px;
-  margin: 1% 4% 0 4%;
 }
 .header__burger {
   display: none;
@@ -189,12 +187,4 @@
 
 #ru:hover, #en:hover {
   color: #b0ddbb;
-}
-
-@media (max-width: 1060px) {
-  .header {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding-top: 15px;
-  }
 }

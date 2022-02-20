@@ -18,18 +18,6 @@
 	}
 }
 
-@media(max-width:1440px){
-	.primaryCover { 
-		height: 80vh;
-	}
-}
-
-@media(max-width:767px){
-	.primaryCover { 
-		height: 50vh;
-	}
-}
-
 @media(max-width:640px){
 	.primaryCover { 
 		&__header {

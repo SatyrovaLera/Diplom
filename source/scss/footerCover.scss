@@ -4,16 +4,21 @@ $bg-color: rgba(43, 85, 43, 0.9);
 .footer{
     &__bottom{
         background-color: $bg-color;
-        height: 9vh;  
+        height: 60px;  
         display: flex;
         align-items: center;  
     }
 
     &__container{
         width: 100%;
+        font-size: 16px;
     }     
+}
 
-    &__copy{
-        font-size: 15px;
-    }
+@media(max-width:599px){
+    .footer{
+        &__container{
+            text-align: center;
+        }
+    }    
 }

@@ -10,7 +10,10 @@
 
 .container {
   max-width: 1260px;
-  margin: 0 auto;
+  padding: 0px 15px;
+  margin: 0px auto;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 .scrollup {

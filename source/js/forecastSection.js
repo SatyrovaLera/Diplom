@@ -131,6 +131,8 @@ const weatherfivedays = {
   },
 };
 
+const favoritesBlock = document.querySelector('.favorites__block');
+
 // Добавляем событие клика мыши по картинке добавления избранного.
 favoritesAddBtn.addEventListener('click', () => {
   favoritesAddImg.src = 'images/addFavorit.gif';
@@ -138,15 +140,17 @@ favoritesAddBtn.addEventListener('click', () => {
     'beforeend',
     `<div class="favorites__block__item">
     <div class="favorites__block__item-header">  
-        <button class="favorites__block__item-button">X</button>        
-        <p class="favorites__block__item-degree">${degreeValue.textContent}</p>
-        <img src="${imageWeather.src}" alt="" class="favorites__image">
+        <button class="favorites__block__item-button">X</button>      
+        <div class="favorites-item__title">
+          <p class="favorites__block__item-degree">${degreeValue.textContent}</p>
+          <img src="${imageWeather.src}" alt="" class="favorites__image">
+        </div>   
     </div>
     <h4 class="favorites__block__item-title">${cityName.textContent}</h4>
     <div class="favorites__block__item-additionally">
-        <p class="favorites__block__additionally-item"><span>${humidityValue.textContent}</span><i class="fas fa-tint tint-icon"></i></p>
-        <p class="favorites__block__additionally-item"><span>${windValue.textContent}</span><i class="fas fa-wind wind-icon"></i></p>
-        <p class="favorites__block__additionally-item"><span>${pressureValue.textContent}</span><i class="fas fa-thermometer-half thermometer-icon"></i></p>
+        <p class="favorites__block__additionally-item"><span>Humidity: ${humidityValue.textContent} %</span><i class="fas fa-tint tint-icon"></i></p>
+        <p class="favorites__block__additionally-item"><span>Wind: ${windValue.textContent} m/s</span><i class="fas fa-wind wind-icon"></i></p>
+        <p class="favorites__block__additionally-item"><span>Pressure: ${pressureValue.textContent} mBar</span><i class="fas fa-thermometer-half thermometer-icon"></i></p>
     </div>
   </div>`,
   );
@@ -201,3 +205,5 @@ window.onload = function () {
   weather.search();
   weatherfivedays.search();
 };
+
+const deleteFavoritesButton = document.querySelector('.favorites__block__item-button');

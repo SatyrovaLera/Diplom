@@ -1,6 +1,6 @@
 .footer__bottom {
   background-color: rgba(43, 85, 43, 0.9);
-  height: 9vh;
+  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,7 +10,11 @@
 }
 .footer__container {
   width: 100%;
+  font-size: 16px;
 }
-.footer__copy {
-  font-size: 15px;
+
+@media (max-width: 599px) {
+  .footer__container {
+    text-align: center;
+  }
 }

@@ -6,10 +6,9 @@ $white-color:#fff;
 }
 
 .header {
+    padding: 20px 0px 0px 0px;
     position: fixed;
     width: 100%;
-    top: 0;
-    left: 0;
     z-index: 50;
     
 	&::before{
@@ -33,7 +32,6 @@ $white-color:#fff;
 		display: flex;
 		justify-content: space-between;
 		height: 50px;   
-        margin: 1% 4% 0 4%; 
 	}
 
 	&__burger {
@@ -197,9 +195,3 @@ $white-color:#fff;
     color: #b0ddbb;
 }
 
-@media(max-width:1060px){
-    .header{
-        box-sizing: border-box;
-        padding-top: 15px;
-    }
-}

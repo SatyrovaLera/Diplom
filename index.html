@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -23,7 +25,7 @@
 <body>
     <div class="wrapper">
         <header class="header" id="header">
-            <div class="header__body">
+            <div class="header__body container">
                 <div class="header__langWrapper">
                     <div class="header__language translate lang-ru" id="ru">RU</div>
                     <div class="header__language translate lang-en" id="en">EN</div>
@@ -48,14 +50,17 @@
         </header>     
         
         <section class="primaryCover">
-            <h1 class="primaryCover__header lang">WEATHER</h1>
+            <div class="primaryCover__container container">
+                <h1 class="primaryCover__header lang">WEATHER</h1>
+            </div>            
         </section>
         
         <section class="aboutSection">
-            <div class="aboutSection__wrapper">
+            <div class="aboutSection__wrapper container">
                 <a href="" name="about"></a>
                 <h2 class="aboutSection__header lang anim-items anim-no-hide" key="aboutSectionheader">about our site</h2>
                 <div class="aboutSection__base">
+                    <img src="images/footer2.jpg" class="aboutSection__image anim-items anim-no-hide">
                     <div class="aboutSection__paragraph--wrapper anim-items anim-no-hide">
                         <p class="aboutSection__paragraph lang" key="paragpaph1">This site presents observations of the weather,
                             its forecasts for all cities of the world. In this version, weather
@@ -71,7 +76,7 @@
                             with the same name you can view the weather for all saved cities at once.</p>
                         <p class="aboutSection__paragraph lang" key="paragpaph4">The media are allowed to make the information
                             presented on this
-                            website available to the public. V
+                            website available to the public.
                             In this case, reference should be made to this source.</p>
                         <p class="aboutSection__paragraph lang" key="paragpaph5">Site navigation is represented by a "cobweb",
                             that is, you can go to any other
@@ -79,111 +84,140 @@
                             "footer" of the site,
                             which contains
                             minimum information.</p>
-                    </div>
-                    <img src="images/footer2.jpg" class="aboutSection__image anim-items anim-no-hide">
+                    </div>                    
                 </div>
             </div>
         </section>
         
         <section class="forecastSection">
-            <a href="" name="forecast"></a>
-            <div class="forecastSection__search">
-                <input type="text" value="Бобруйск" class="input__search"
-                    onfocus="if (this.value == 'Search city') {this.value = '';}"
-                    onblur="if (this.value == '') {this.value = 'Search city';}">
-                <button class="button__search lang" key="search">SEARCH</button>
-            </div>
-            <div class="weather__block">
-                <div class="weather__block-title">
-                    <div class="block__title">
-                        <p class="title__city"></p>
-                        <span class="title__date"></span>
-                    </div>
-                    <button class="addfavorite__button"><img src="images/heartAdd.png" alt="" class="favoritesadd__img"
-                            id="favoritesAddimg">
-                    </button>
+            <div class="forecastSection__container container">
+                <a href="" name="forecast"></a>
+                <div class="forecastSection__search search">
+                    <div class=""></div>
+                    <div class="search__line">
+                        <input type="text" value="Бобруйск" class="input__search" onfocus="if (this.value == 'Search city') {this.value = '';}"
+                            onblur="if (this.value == '') {this.value = 'Search city';}">
+                        <button class="button__search lang" key="search">SEARCH</button>
+                    </div>                    
                 </div>
-                <div class="weather__block-today">
-                    <div class="block__today-title">
-                        <p class="block__today-degree"></p>
-                        <div class="block__today-overcast">
-                            <p class="block__today-forecast"></p>
-                            <img src="" alt="weather" class="block__today-image">
+                <div class="weather__block">
+                    <div class="weather__block-title">
+                        <div class="block__title">
+                            <p class="title__city"></p>
+                            <span class="title__date"></span>
                         </div>
-                        <div class="block__today-sun">
-                            <div class="sun__sunrise">
-                                <img src="images/sunrise.png" alt="">
-                                <p class="sunrisetitle"></p>
+                        <button class="addfavorite__button"><img src="images/heartAdd.png" alt="" class="favoritesadd__img"
+                                id="favoritesAddimg">
+                        </button>
+                    </div>
+                    <div class="weather__block-today">
+                        <div class="block__today-title">
+                            <p class="block__today-degree"></p>
+                            <div class="block__today-overcast">
+                                <p class="block__today-forecast item__content"></p>
+                                <img src="" alt="weather" class="block__today-image">
                             </div>
-                            <div class="sun__sunset">
-                                <img src="images/sunset.png" alt="">
-                                <p class="sunsettitle"></p>
+                            <div class="block__today-sun">
+                                <div class="sun__sunrise">
+                                    <img src="images/sunrise.png" alt="">
+                                    <p class="sunrisetitle"></p>
+                                </div>
+                                <div class="sun__sunset">
+                                    <img src="images/sunset.png" alt="">
+                                    <p class="sunsettitle"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block__today-description description">
+                            <div class="description__item item">
+                                <p class="block__today-fells item__content lang fells__value-text" key="fells">Fells like (°): </p>
+                                <p class="fells__value value"></p>
+                            </div>
+                            <div class="description__item">
+                                <p class="block__today-wind item__content lang" key="wind">Wind (m/s): </p>
+                                <p class="wind__value value"></p>
+                            </div>
+                            <div class="description__item">
+                                <p class="block__today-humidity item__content lang" key="humidity">Humidity (%): </p>
+                                <p class="humidity__value value"></p>
+                            </div>
+                            <div class="description__item">
+                                <p class="block__today-pressure item__content lang" key="pressure">Pressure (mBar): </p>
+                                <p class="pressure__value value"></p>
                             </div>
                         </div>
                     </div>
-                    <div class="block__today-description">
-                        <div class="df"><p class="block__today-fells lang" key="fells">fells like (°): </p><p class="fells__value"></p></div>
-                        <div class="df"><p class="block__today-wind lang" key="wind">wind (m/s): </p><p class="wind__value"></p></div>
-                        <div class="df"><p class="block__today-humidity lang" key="humidity">humidity (%): </p><p class="humidity__value"></p></div>
-                        <div class="df"><p class="block__today-pressure lang" key="pressure">pressure (mBar): </p><p class="pressure__value"></p></div>
+                    <!--<div id="map" class="map"></div>-->
+                    <div class="weather__block-nextdays">
+                        <div class="block-nextdays__item">
+                            <p class="block-nextdays__item-title" id="day1"></p>
+                            <div class="block-nextdays__item-description nextdays__item">
+                                <div class="nextdays__item-degree">
+                                    <p class="block-nextdays__item-degreemax" id="day1Max"></p>
+                                    <p class="block-nextdays__item-degreemin" id="day1Min"></p>
+                                </div>                                
+                                <img src="" alt="image" id="img1" class="block-nextdays__item-img">
+                            </div>
+                        </div>
+                        <div class="block-nextdays__item">
+                            <p class="block-nextdays__item-title" id="day2"></p>
+                            <div class="block-nextdays__item-description">
+                                <div class="nextdays__item-degree">
+                                    <p class="block-nextdays__item-degreemax" id="day2Max"></p>
+                                    <p class="block-nextdays__item-degreemin" id="day2Min"></p>
+                                </div>
+                                <img src="" alt="image" id="img2" class="block-nextdays__item-img">
+                            </div>
+                        </div>
+                        <div class="block-nextdays__item">
+                            <p class="block-nextdays__item-title" id="day3"></p>
+                            <div class="block-nextdays__item-description">
+                                <div class="nextdays__item-degree">
+                                    <p class="block-nextdays__item-degreemax" id="day3Max"></p>
+                                    <p class="block-nextdays__item-degreemin" id="day3Min"></p>
+                                </div>
+                                <img src="" alt="image" id="img3" class="block-nextdays__item-img">
+                            </div>
+                        </div>
+                        <div class="block-nextdays__item">
+                            <p class="block-nextdays__item-title" id="day4"></p>
+                            <div class="block-nextdays__item-description">
+                                <div class="nextdays__item-degree">
+                                    <p class="block-nextdays__item-degreemax" id="day4Max"></p>
+                                    <p class="block-nextdays__item-degreemin" id="day4Min"></p>
+                                </div>
+                                <img src="" alt="image" id="img4" class="block-nextdays__item-img">
+                            </div>
+                        </div>
+                        <div class="block-nextdays__item">
+                            <p class="block-nextdays__item-title" id="day5"></p>
+                            <div class="block-nextdays__item-description">
+                                <div class="nextdays__item-degree">
+                                    <p class="block-nextdays__item-degreemax" id="day5Max"></p>
+                                    <p class="block-nextdays__item-degreemin" id="day5Min"></p>
+                                </div>
+                                <img src="" alt="image" id="img5" class="block-nextdays__item-img">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!--<div id="map" class="map"></div>-->
-                <div class="weather__block-nextdays">
-                    <div class="block-nextdays__item">
-                        <p class="block-nextdays__item-title" id="day1"></p>
-                        <div class="block-nextdays__item-description">
-                            <span class="block-nextdays__item-degreemax" id="day1Max"></span>
-                            <span class="block-nextdays__item-degreemin" id="day1Min"></span>
-                            <img src="" alt="image" id="img1" class="block-nextdays__item-img">
-                        </div>
-                    </div>
-                    <div class="block-nextdays__item">
-                        <p class="block-nextdays__item-title" id="day2"></p>
-                        <div class="block-nextdays__item-description">
-                            <span class="block-nextdays__item-degreemax" id="day2Max"></span>
-                            <span class="block-nextdays__item-degreemin" id="day2Min"></span>
-                            <img src="" alt="image" id="img2" class="block-nextdays__item-img">
-                        </div>
-                    </div>
-                    <div class="block-nextdays__item">
-                        <p class="block-nextdays__item-title" id="day3"></p>
-                        <div class="block-nextdays__item-description">
-                            <span class="block-nextdays__item-degreemax" id="day3Max"></span>
-                            <span class="block-nextdays__item-degreemin" id="day3Min"></span>
-                            <img src="" alt="image" id="img3" class="block-nextdays__item-img">
-                        </div>
-                    </div>
-                    <div class="block-nextdays__item">
-                        <p class="block-nextdays__item-title" id="day4"></p>
-                        <div class="block-nextdays__item-description">
-                            <span class="block-nextdays__item-degreemax" id="day4Max"></span>
-                            <span class="block-nextdays__item-degreemin" id="day4Min"></span>
-                            <img src="" alt="image" id="img4" class="block-nextdays__item-img">
-                        </div>
-                    </div>
-                    <div class="block-nextdays__item">
-                        <p class="block-nextdays__item-title" id="day5"></p>
-                        <div class="block-nextdays__item-description">
-                            <span class="block-nextdays__item-degreemax" id="day5Max"></span>
-                            <span class="block-nextdays__item-degreemin" id="day5Min"></span>
-                            <img src="" alt="image" id="img5" class="block-nextdays__item-img">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>            
         </section>
         
         <section class="favoritesSection">
-            <a href="" name="favorites"></a>
+            <div class="favoritesSection__container container">
+                <a href="" name="favorites"></a>
+                <h2 class="favorites__block-title">favorites</h2>
+                <div class="favorites__block" id="favoritesBlock">
+                    
+                </div>
+            </div>            
         </section>
         
         <footer class="footerCover">
             <div class="footer__bottom">
                 <div class="footer__container container">
-                    <div class="footer__copy">
-                        Made With Love. All Right Reserved &copy;
-                    </div>                    
+                    Made With Love. All Right Reserved &copy;</p>  
                 </div>
             </div>
         </footer>

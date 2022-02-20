@@ -2,16 +2,10 @@ $white-color: #fff;
 $bg-color: rgba(77, 116, 76, 0.7);
 
 .aboutSection{
-    height: 100vh;
     background-color: $bg-color;
-    display: flex;
-    align-items: center;
 
     &__wrapper{
-        width: 100%;
-        margin-top: 50px;
-        margin-bottom: 100px;
-        padding: 0 200px;
+        padding: 200px 0px;
     }
 
     &__header{
@@ -40,10 +34,7 @@ $bg-color: rgba(77, 116, 76, 0.7);
     }
 
     &__base{
-        width: 80%;
         display: flex;
-        flex-direction: row-reverse;
-        margin: 0 auto;
         align-items: center;
     }    
 
@@ -78,62 +69,65 @@ $bg-color: rgba(77, 116, 76, 0.7);
     }
 }
 
-@media(max-width:1640px){
-    .aboutSection__wrapper {
-        margin-top: 40px;
-        margin-bottom: 90px;
-        padding: 0 100px;
-    }   
+@media(max-width:1320px){
+    .aboutSection{
+        &__wrapper{
+            padding: 150px 15px;
+        }
+    }  
 }
 
-@media(max-width:1440px){
-    .aboutSection{
-        height: 80vh;
-
-        &__base{
-            width: 100%;
-        }
+@media(max-width:1110px){
+    .aboutSection__wrapper{
+        padding: 100px 15px;
     }
 }
 
-@media(max-width:1100px){
+@media(max-width:990px){
     .aboutSection{
-        height: 70%;
-        padding: 20px 0px 20px 0px;
-
-        &__image{
-           display: none; 
+        &__base{
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
         }
 
-        &__wrapper{
-            margin: 10px 0px 10px 0px;
-            padding: 0px 20px;
+        &__image{
+            display: none;
         }
 
         &__paragraph{
-            font-size: 20px;
-            line-height: 30px;
+            padding-left: 0px;
         }
-    }
+    }  
 }
 
-@media(max-width:670px){   
+@media(max-width:540px){
     .aboutSection{
-        padding: 15px 0px 15px 0px;
-
         &__header{
-            margin-bottom: 10px;
-            margin-top: 20px;
-            font-size: 25px;
+            font-size: 35px;
+            line-height: 30px;
+            margin-bottom: 25px;
         }
 
         &__wrapper{
-            margin: 10px 0px 20px 0px;
+            padding: 50px 15px;
         }
 
         &__header::after{
-            height: 3px;
             margin-top: 15px;
         }
+
+        &__paragraph{
+            &--wrapper{
+                transform: translate(0px, 0%);
+                transition: none;
+                opacity: 1;
+            }
+        }  
+    }
+}
+
+@media(max-width:320px){
+    .aboutSection__wrapper{
+        padding: 20px 15px;
     }
 }

@@ -1,4 +1,97 @@
+$bg-color: rgba(63, 117, 63, 0.7);
+$bg-favorites-item: rgba(52, 97, 52, 0.678);
+
 .favoritesSection{
-    height: 100vh;
-    background-color: purple;
+    padding: 200px 0px;
+    background-color: $bg-color;
+}
+
+.favorites__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+    &-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-size: 50px;
+        line-height: 55px;        
+    }
+
+    &__item {
+        width: 200px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        background-color: $bg-favorites-item;
+        padding: 15px 25px;
+        margin: 0px 5px 13px 5px;
+
+        &-button {
+            width: 10px;
+            height: 10px;
+            background: none;
+        }
+
+        &-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        &-degree {
+            font-size: 45px;
+            margin-top: 30px;
+        }
+
+        &-title {
+            font-size: 20px;
+            line-height: 25px;
+            font-weight: 400;
+            margin: 25px 0px 0px 0px;
+            font-weight: 500;
+        }
+
+        &-subtitle {
+            font-size: 20px;
+            line-height: 15px;
+            font-weight: 300;
+            margin: 10px 0px 0px 0px;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        &-additionally {
+            display: flex;
+            flex-direction: column;
+            margin: 5px 0px 0px 0px;
+            font-weight: 500;
+        }
+
+    }
+
+    &__additionally-item {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.favorites__image{
+    width: 50px;
+    height: 50px;
+}
+
+.favorites-item__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.favoritesAdditionally-icon {
+    opacity: 0.9;
 }
