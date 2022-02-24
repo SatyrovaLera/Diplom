@@ -167,6 +167,7 @@
   }
   .header__menu.active {
     top: 0;
+    padding: 0;
   }
   .header__list > *:not(:last-child) {
     margin-right: 0px;

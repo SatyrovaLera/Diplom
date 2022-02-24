@@ -87,11 +87,29 @@ const weather = {
       sunriseValue.innerHTML = `Восход: ${Translatingunix(sunrise)}`;
       sunsetValue.innerText = `Заход: ${Translatingunix(sunset)}`;
       if (forecastName.textContent == 'overcast clouds') forecastName.textContent = 'облачно';
+      if (forecastName.textContent == 'haze') forecastName.textContent = 'туман';
+      if (forecastName.textContent == 'moderate rain') forecastName.textContent = 'умеренный дождь';
+      if (forecastName.textContent == 'clear sky') forecastName.textContent = 'чистое небо';
+      if (forecastName.textContent == 'shower sleet') forecastName.textContent = 'мокрый снег';
+      if (forecastName.textContent == 'scattered clouds') forecastName.textContent = 'рассеянные облака';
+      if (forecastName.textContent == 'light rain') forecastName.textContent = 'легкий дождь';
+      if (forecastName.textContent == 'rain and snow') forecastName.textContent = 'дождь и снег';
+      if (forecastName.textContent == 'few clouds') forecastName.textContent = 'малооблачно';
+      if (forecastName.textContent == 'broken clouds') forecastName.textContent = 'кучевые облака';
     });
     document.getElementById('en').addEventListener('click', () => {
       sunriseValue.innerText = `${Translatingunix(sunrise)} AM`;
       sunsetValue.innerText = `${Translatingunix(sunset)} PM`;
       if (forecastName.textContent == 'облачно') forecastName.textContent = 'overcast clouds';
+      if (forecastName.textContent == 'туман') forecastName.textContent = 'haze';
+      if (forecastName.textContent == 'умеренный дождь') forecastName.textContent = 'moderate rain';
+      if (forecastName.textContent == 'чистое небо') forecastName.textContent = 'clear sky';
+      if (forecastName.textContent == 'мокрый снег') forecastName.textContent = 'shower sleet';
+      if (forecastName.textContent == 'рассеянные облака') forecastName.textContent = 'scattered clouds';
+      if (forecastName.textContent == 'легкий дождь') forecastName.textContent = 'light rain';
+      if (forecastName.textContent == 'дождь и снег') forecastName.textContent = 'rain and snow';
+      if (forecastName.textContent == 'малооблачно') forecastName.textContent = 'few clouds';
+      if (forecastName.textContent == 'кучевые облака') forecastName.textContent = 'broken clouds';
     });
     imageWeather.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     document.querySelector('.weather__block').classList.remove('loading');
@@ -138,7 +156,7 @@ const weatherfivedays = {
   search() {
     this.fetchWeatherfiveday(document.querySelector('.input__search').value);
     const d = new Date();
-    const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const weekday = ['Sun/Вс', 'Mon/Пн', 'Tue/Вт', 'Wed/Ср', 'Thu/Чт', 'Fri/Пт', 'Sat/Сб'];
     function CheckDay(day) {
       if (day + d.getDay() > 6) {
         return day + d.getDay() - 7;
