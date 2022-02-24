@@ -123,8 +123,8 @@ $black-color: #000000;
 
 .block__today{ 
     &-degree{
-        font-size: 180px;
-        line-height: 180px;
+        font-size: 165px;
+        line-height: 165px;
         align-self: center;
     }
 
@@ -166,7 +166,7 @@ $black-color: #000000;
         flex-direction: column;
         background-color: $bg-color-title;
         border-radius: 30px;
-        padding: 38px 25px;
+        padding: 45.5px 25px;
         width: 525.25px;
         box-sizing: border-box;
     }

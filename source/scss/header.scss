@@ -81,10 +81,10 @@ $white-color:#fff;
             li:hover a{
                 color: #b0ddbb;
             }
+    }
 
-            li:not(:last-child) {
-                margin-right: 30px;
-            }
+    &__list>*:not(:last-child):not(:first-child){
+        margin-right: 20px;
     }
 	
 	&__link {
@@ -159,7 +159,7 @@ $white-color:#fff;
             overflow: auto;
             width: 100%;
             height: 100%;
-            background-color: rgba(26, 97, 26, 0.4);
+            background-color: rgba(26, 97, 26, 0.9);
             padding: 70px 10px 20px 10px;
             transition: all 0.5s ease 0s;
 
@@ -172,9 +172,20 @@ $white-color:#fff;
             display: block;
 
             li {
-                margin: 0px 0px 20px 4%;
+                margin: 20px 0px 20px 0px;
                 text-align: left;
-            }            
+            } 
+            
+            li:hover {
+                background: none;
+                animation: none;
+            } 
+
+            li a:hover {
+                color: #000;
+                background: none;
+                animation: none;
+            } 
         }    
     }
 
@@ -194,4 +205,3 @@ $white-color:#fff;
 #ru:hover, #en:hover{
     color: #b0ddbb;
 }
-

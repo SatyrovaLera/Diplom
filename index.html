@@ -15,15 +15,30 @@
     <link rel="stylesheet" href="css/header.css">    
     <link rel="stylesheet" href="css/sectionOne.css">
     <link rel="stylesheet" href="css/footerCover.css">
+    <link rel="stylesheet" href="css/notification.css">
     <link rel="stylesheet" href="css/aboutSection.css">
     <link rel="stylesheet" href="css/forecastSection.css">
-    <link rel="stylesheet" href="css/favoritesSection.css">
+    <link rel="stylesheet" href="css/favoritesSection.css">    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
     <title>Weather</title>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="alert hide">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="msg">Error: This city does not exist!</span>
+        <span class="close-btn">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+    <div class="alert-letters hide">
+        <span class="fas fa-exclamation-circle"></span>
+        <span class="msg">Error: Enter only letters!</span>
+        <span class="close-btn closeLetters">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+    <div class="wrapper">        
         <header class="header" id="header">
             <div class="header__body container">
                 <div class="header__langWrapper">
@@ -95,7 +110,7 @@
                 <div class="forecastSection__search search">
                     <div class=""></div>
                     <div class="search__line">
-                        <input type="text" value="Бобруйск" class="input__search" onfocus="if (this.value == 'Search city') {this.value = '';}"
+                        <input id="inputCity" type="text" value="Бобруйск" class="input__search" onfocus="if (this.value == 'Search city') {this.value = '';}"
                             onblur="if (this.value == '') {this.value = 'Search city';}">
                         <button class="button__search lang" key="search">SEARCH</button>
                     </div>                    

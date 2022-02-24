@@ -22,6 +22,8 @@ const sunriseValue = document.querySelector('.sunrisetitle');
 
 const sunsetValue = document.querySelector('.sunsettitle');
 
+var regExpCity = /^[a-zA-ZА-Яа-яёЁ]+$/i;
+
 // Добавляем событие мыши при уходе курсора с кнопки добавления избранного.
 favoritesAddBtn.addEventListener('mouseout', () => {
   favoritesAddImg.src = 'images/heartAdd.png';
@@ -44,7 +46,25 @@ const weather = {
   fetchWeather(city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`)
       .then((response) => response.json())
-      .then((data) => this.displayWeather(data));
+      .then((data) => this.displayWeather(data))
+      .catch(() => {
+        if (
+          regExpCity.test(document.querySelector('.input__search').value) &&
+          document.querySelector('.input__search').value !== ''
+        ) {
+          $('.alert').removeClass('hide');
+          $('.alert').addClass('show');
+          $('.alert').addClass('showAlert');
+          setTimeout(function () {
+            $('.alert').addClass('hide');
+            $('.alert').removeClass('show');
+          }, 3000);
+          $('.close-btn ').click(function () {
+            $('.alert').addClass('hide');
+            $('.alert').removeClass('show');
+          }); // Автоматическое исчезновение уведомления.
+        }
+      });
   },
   displayWeather(data) {
     const { name } = data;
@@ -160,6 +180,21 @@ favoritesAddBtn.addEventListener('click', () => {
 document.querySelector('.button__search').addEventListener('click', () => {
   weather.search();
   weatherfivedays.search();
+
+  //Валидация ввода города.
+  if (!regExpCity.test(document.querySelector('.input__search').value)) {
+    $('.alert-letters').removeClass('hide');
+    $('.alert-letters').addClass('show');
+    $('.alert-letters').addClass('showAlert');
+    setTimeout(function () {
+      $('.alert-letters').addClass('hide');
+      $('.alert-letters').removeClass('show');
+    }, 3000); // Автоматическое исчезновение уведомления.
+    $('.closeLetters ').click(function () {
+      $('.alert-letters').addClass('hide');
+      $('.alert-letters').removeClass('show');
+    });
+  }
 });
 
 // Добавляем событие клавиш при нажатие Enter на поле ввода города.
@@ -167,6 +202,21 @@ document.querySelector('.input__search').addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
     weather.search();
     weatherfivedays.search();
+
+    //Валидация ввода города.
+    if (!regExpCity.test(document.querySelector('.input__search').value)) {
+      $('.alert-letters').removeClass('hide');
+      $('.alert-letters').addClass('show');
+      $('.alert-letters').addClass('showAlert');
+      setTimeout(function () {
+        $('.alert-letters').addClass('hide');
+        $('.alert-letters').removeClass('show');
+      }, 3000); // Автоматическое исчезновение уведомления.
+      $('.closeLetters ').click(function () {
+        $('.alert-letters').addClass('hide');
+        $('.alert-letters').removeClass('show');
+      });
+    }
   }
 });
 

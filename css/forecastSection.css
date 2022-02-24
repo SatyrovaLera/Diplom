@@ -146,8 +146,8 @@
 }
 
 .block__today-degree {
-  font-size: 180px;
-  line-height: 180px;
+  font-size: 165px;
+  line-height: 165px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -208,7 +208,7 @@
           flex-direction: column;
   background-color: rgba(77, 116, 76, 0.3);
   border-radius: 30px;
-  padding: 38px 25px;
+  padding: 45.5px 25px;
   width: 525.25px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

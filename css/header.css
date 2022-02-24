@@ -79,8 +79,8 @@
 .header__list li:hover a {
   color: #b0ddbb;
 }
-.header__list li:not(:last-child) {
-  margin-right: 30px;
+.header__list > *:not(:last-child):not(:first-child) {
+  margin-right: 20px;
 }
 .header__link {
   text-transform: uppercase;
@@ -156,7 +156,7 @@
     overflow: auto;
     width: 100%;
     height: 100%;
-    background-color: rgba(26, 97, 26, 0.4);
+    background-color: rgba(26, 97, 26, 0.9);
     padding: 70px 10px 20px 10px;
     -webkit-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
@@ -168,8 +168,19 @@
     display: block;
   }
   .header__list li {
-    margin: 0px 0px 20px 4%;
+    margin: 20px 0px 20px 0px;
     text-align: left;
+  }
+  .header__list li:hover {
+    background: none;
+    -webkit-animation: none;
+            animation: none;
+  }
+  .header__list li a:hover {
+    color: #000;
+    background: none;
+    -webkit-animation: none;
+            animation: none;
   }
 
   .wrapper__header {

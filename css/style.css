@@ -28,6 +28,10 @@
   background: url("../images/icon_top.png") no-repeat;
 }
 
+.scrollup:hover {
+  opacity: 0.5;
+}
+
 button {
   cursor: pointer;
 }
