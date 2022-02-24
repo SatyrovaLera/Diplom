@@ -7,7 +7,7 @@ $var5: #e9635e;
 .alert, .alert-letters{
     background: $var1;
     padding: 20px 40px;
-    min-width: 420px;
+    width: 420px;
     position: fixed;
     right: 0;
     top: 10px;
@@ -100,5 +100,37 @@ $var5: #e9635e;
 
     100% {
         transform: translateX(100%);
+    }
+}
+
+@media(max-width:595px){
+    .alert, .alert-letters {
+        width: 300px;
+    }
+}
+
+@media(max-width:445px){
+    .alert, .alert-letters {
+        width: 250px;
+        
+        & .msg {
+            font-size: 16px;
+        }
+    }
+}
+
+@media(max-width:365px){
+    .alert, .alert-letters {
+        width: 200px;
+
+        &.msg{
+            font-size: 13px;
+            padding: 0 10px;
+        }
+
+        & .fa-exclamation-circle {
+            font-size: 25px;
+            left: 10px;
+        }
     }
 }

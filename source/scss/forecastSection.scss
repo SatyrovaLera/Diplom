@@ -23,6 +23,11 @@ $black-color: #000000;
     border: 1px solid $bg-button-dark;
     background: $bg-button-search;
     text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+}
+
+.button__search:hover {
+    background-color: rgba(20, 41, 19, 0.5);
 }
 
 .addfavorite__button {

@@ -15,6 +15,12 @@
   border: 1px solid rgba(44, 45, 66, 0.034);
   background: rgba(77, 116, 76, 0.4);
   text-transform: uppercase;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.button__search:hover {
+  background-color: rgba(20, 41, 19, 0.5);
 }
 
 .addfavorite__button {
