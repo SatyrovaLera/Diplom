@@ -36,10 +36,15 @@ $white-color:#fff;
 
 	&__burger {
 		display: none;
+        cursor: pointer;
+
+        &.active{
+            cursor: pointer;
+        }
 
 		&.active::before {
 			transform: rotate(45deg);
-			top: 9px;
+			top: 9px;         
 		}
 
 		&.active span {
@@ -83,7 +88,7 @@ $white-color:#fff;
             }
     }
 
-    &__list>*:not(:last-child):not(:first-child){
+    &__list>*:not(:last-child){
         margin-right: 20px;
     }
 	
@@ -110,13 +115,16 @@ $white-color:#fff;
 
 @media (max-width:767px) {
     .header{
-        background-color: rgba(26, 97, 26, 0.5);
         &__burger {
             display: block;
             position: relative;
             width: 30px;
             height: 20px;
             z-index: 3;
+
+            &__list:last-child{
+                margin-right: 20px;
+            }
             
             span {
                 position: absolute;
@@ -159,7 +167,7 @@ $white-color:#fff;
             overflow: auto;
             width: 100%;
             height: 100%;
-            background-color: rgba(26, 97, 26, 0.9);
+            background-color: #99A799;
             padding: 70px 10px 20px 10px;
             transition: all 0.5s ease 0s;
 
@@ -168,12 +176,26 @@ $white-color:#fff;
             }
         }
 
+        &__list>*:not(:last-child){
+            margin-right: 0px;
+        }
+	
+
         &__list {
-            display: block;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            display: flex;
 
             li {
-                margin: 20px 0px 20px 0px;
-                text-align: left;
+                margin: 20px 0px 20px 0px; 
+                text-align: center;
+                width: 100%;               
+            } 
+
+            li a {
+                font-size: 30px;
             } 
             
             li:hover {
@@ -182,7 +204,7 @@ $white-color:#fff;
             } 
 
             li a:hover {
-                color: #000;
+                color: #E2C2B9;
                 background: none;
                 animation: none;
             } 
