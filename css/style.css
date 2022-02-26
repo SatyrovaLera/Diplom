@@ -47,3 +47,7 @@ button {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+a {
+  text-decoration: none;
+}

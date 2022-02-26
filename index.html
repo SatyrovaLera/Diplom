@@ -21,9 +21,10 @@
     <link rel="stylesheet" href="css/favoritesSection.css">    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
+    <script src="https://unpkg.com/vue@3"></script>
     <title>Weather</title>
 </head>
-<body>
+<body ref="body">
     <div class="alert hide">
         <span class="fas fa-exclamation-circle"></span>
         <span class="msg lang" key="errorCity">Error: This city does not exist!</span>
@@ -45,10 +46,10 @@
                     <div class="header__language translate lang-ru" id="ru">RU</div>
                     <div class="header__language translate lang-en" id="en">EN</div>
                 </div>
-                <div class="header__burger">
+                <div class="header__burger" @click="burgerMenu" ref="headerBurger">
                     <span></span>
                 </div>
-                <nav class="header__menu">
+                <nav class="header__menu" ref="headerMenu">
                     <ul class="header__list">
                         <li>
                             <a href="#about" class="header__link lang" key="about">about</a>
@@ -229,7 +230,13 @@
             </div>            
         </section>
         
-        <footer class="footerCover">
+        <footer class="footerCover">    
+            <div class="footer__top">
+                <div class="game__container container">
+                    <p class="game__container__title lang" key="gameText">Boring? Or just want to relax? The game will help you :)</p>
+                    <div class="game__container__button"><a href="game.html" class="round green lang" key="gameButton">Click me<span class="round">Go to game!</span></a></div>                               
+                </div>
+            </div>                
             <div class="footer__bottom">
                 <div class="footer__container container lang" key="footer">
                     Made With Love. All Right Reserved &copy;</p>  

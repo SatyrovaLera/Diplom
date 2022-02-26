@@ -1,5 +1,12 @@
-document.querySelector('.header__burger').addEventListener('click', () => {
-  document.querySelector('.header__burger').classList.toggle('active');
-  document.querySelector('.header__menu').classList.toggle('active');
-  document.querySelector('body').classList.toggle('lock');
-});
+Vue.createApp({
+  data() {
+    return {};
+  },
+  methods: {
+    burgerMenu() {
+      this.$refs.headerBurger.classList.toggle('active');
+      this.$refs.headerMenu.classList.toggle('active');
+      this.$refs.body.classList.toggle('lock');
+    },
+  },
+}).mount('.header__body');
