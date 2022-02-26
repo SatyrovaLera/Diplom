@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/style.css">   
     <link rel="stylesheet" href="css/header.css">    
     <link rel="stylesheet" href="css/sectionOne.css">
@@ -24,7 +25,7 @@
     <script src="https://unpkg.com/vue@3"></script>
     <title>Weather</title>
 </head>
-<body ref="body">
+<body>
     <div class="alert hide">
         <span class="fas fa-exclamation-circle"></span>
         <span class="msg lang" key="errorCity">Error: This city does not exist!</span>
@@ -43,8 +44,8 @@
         <header class="header" id="header">
             <div class="header__body container">
                 <div class="header__langWrapper">
-                    <div class="header__language translate lang-ru" id="ru">RU</div>
-                    <div class="header__language translate lang-en" id="en">EN</div>
+                    <div class="header__language translate lang-ru" id="ru" @click="languageRu">{{ru}}</div>
+                    <div class="header__language translate lang-en" id="en" @click="languageEn">{{en}}</div>
                 </div>
                 <div class="header__burger" @click="burgerMenu" ref="headerBurger">
                     <span></span>
@@ -52,13 +53,13 @@
                 <nav class="header__menu" ref="headerMenu">
                     <ul class="header__list">
                         <li>
-                            <a href="#about" class="header__link lang" key="about">about</a>
+                            <a href="#about" class="header__link lang">{{about}}</a>
                         </li>
                         <li>
-                            <a href="#forecast" class="header__link lang" key="forecast">forecast</a>
+                            <a href="#forecast" class="header__link lang">{{forecast}}</a>
                         </li>
                         <li>
-                            <a href="#favorites" class="header__link lang" key="favorites">favorites</a>
+                            <a href="#favorites" class="header__link lang">{{favorites}}</a>
                         </li>
                     </ul>
                 </nav>
@@ -163,7 +164,6 @@
                             </div>
                         </div>
                     </div>
-                    <!--<div id="map" class="map"></div>-->
                     <div class="weather__block-nextdays">
                         <div class="block-nextdays__item">
                             <p class="block-nextdays__item-title" id="day1"></p>
@@ -229,6 +229,38 @@
                 </div>
             </div>            
         </section>
+
+        <section class="formSection">
+            <div class="form container">
+                <form action="#" id="form" class="form__body">
+                    <h1 class="form__title lang" key="formTitle">Send a proposal for correcting errors, improving the site, or thanks to the developer :)</h1>
+                    <div class="form__columns">
+                        <div class="">
+                            <div class="form__item">
+                                <label for="formName" class="form__label lang" key="formName">Name*:</label>
+                                <input id="formName" type="text" name="name" class="form__input _req">
+                            </div>
+                            <div class="form__item">
+                                <label for="formEmail" class="form__label" >E-mail*:</label>
+                                <input id="formEmail" type="text" name="email" class="form__input _req _email">
+                            </div>
+                        </div>
+                        <div class="form__item">
+                            <label for="formMessage" class="form__label lang" key="formMessage">Message*:</label>
+                            <textarea name="message" id="formMessage" class="form__input _req"></textarea>
+                        </div>
+                    </div>                    
+                    <div class="form__item">
+                        <div class="checkbox">
+                            <input checked id="formAgrement" type="checkbox" name="agrement" class="checkbox__input _req">
+                            <label for="formAgrement" class="checkbox__label" ><p><span class="lang" key="formCheckbox">I give my consent to the processing of personal data in accordance with </span><a href="" class="lang"
+                                key="terms">the terms.*</a></p> </label>
+                        </div>
+                    </div>
+                    <button class="form__button lang" key="formButton" type="submit">Send</button>
+                </form>
+            </div>
+        </section>
         
         <footer class="footerCover">    
             <div class="footer__top">
@@ -248,6 +280,7 @@
     <a href="#" class="scrollup">Наверх</a>
 
     <script src="source/js/menu.js"></script>
+    <script src="source/js/form.js"></script>
     <script src="source/js/burger.js"></script>    
     <script src="source/js/buttonUp.js"></script> 
     <script src="source/js/animation.js"></script>    

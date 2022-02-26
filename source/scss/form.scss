@@ -1,0 +1,195 @@
+$bg-color:rgba(77, 116, 76, 1);
+
+form * {
+    outline: none;
+}
+
+input.form__input{
+    margin-right: 10px;
+}
+
+textarea.form__input {
+    min-height: 120px;
+    resize: vertical;
+    padding: 20px;
+}
+
+.formSection{
+    padding: 30px 0;
+    background-color: $bg-color;
+}
+
+.checkbox._error .checkbox__label::before {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.801);
+}
+
+.form{
+    &__body {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(133, 125, 148, 0.787) url(https://64.media.tumblr.com/tumblr_ma9n5kilwp1qc4uvwo1_400.gifv) center / 250px no-repeat;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease 0s;
+        }
+
+        &._sending::after{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__title {
+        font-size: 30px;
+        line-height: 45px;
+        font-weight: 700;
+        margin: 0px 0px 30px 0px;
+    }
+
+    &__item {
+        margin: 0px 0px 20px 0px;
+    }
+
+    &__label {
+        font-size: 18px;
+        display: block;
+        margin: 0px 0px 10px 0px;
+    }
+
+    &__input {
+        height: 50px;
+        padding: 0px 20px;
+        border-radius: 5px;
+        width: 450px;
+        font-size: 18px;
+        transition: all 0.3s ease 0s;
+        color: black;
+
+        &:focus {
+            box-shadow: 0 0 20px rgba(29, 212, 59, 0.692);
+        }
+
+        &._error {
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.801);
+        }
+    }
+
+    &__button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60px;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 20px;
+        background-color: rgba(52, 97, 52, 0.842);
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: background-color 0.4s ease 0s;
+        position: relative;
+        top: 0;
+
+        &:hover {
+            background-color: rgba(32, 58, 32, 0.842);
+        }
+
+        &:active {
+            top: 3px;
+        }
+    }
+
+    &__columns{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.checkbox{
+    &__input {
+        display: none;
+
+        &:checked+.checkbox__label::after {
+            transform: scale(1);
+        }
+
+    }
+
+    &__label {
+        font-size: 16px;
+        line-height: 140%;
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            align-self: flex-start;
+            flex: 0 0 22px;
+            height: 22px;
+            background-color: #fff;
+            border-radius: 4px;
+            margin: 0px 10px 0px 0px;
+        }
+
+        &::after {
+            transition: transform 0.4s ease 0s;
+            content: '';
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            background-color: rgba(29, 161, 106, 0.623);
+            border-radius: 4px;
+            transform: scale(0);
+        }
+
+        & a {
+            color: rgba(35, 187, 124, 0.623);
+        }
+    }
+}
+
+
+@media(max-width:525px){
+    .form{
+        &__title {
+            font-size: 20px;
+            line-height: 35px;
+            font-weight: 600;
+            margin: 0px 0px 20px 0px;
+        }
+
+        &__input {
+            width: 350px;
+        }
+
+        
+        &__button {
+            min-height: 50px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}
+
+@media(max-width:425px){
+    .form{
+        &__input {
+            width: 250px;
+        }
+    }
+}

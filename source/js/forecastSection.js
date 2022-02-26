@@ -113,16 +113,6 @@ const weather = {
     });
     imageWeather.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     document.querySelector('.weather__block').classList.remove('loading');
-    /*ymaps.ready(init);
-
-    function init() {
-      var map = new ymaps.Map('map', {
-        center: [lat, lon],
-        zoom: 12,
-        controls: ['zoomControl'],
-        behaviors: ['drag'],
-      });     
-    }*/
   },
   search() {
     this.fetchWeather(document.querySelector('.input__search').value);

@@ -1,0 +1,193 @@
+form * {
+  outline: none;
+}
+
+input.form__input {
+  margin-right: 10px;
+}
+
+textarea.form__input {
+  min-height: 120px;
+  resize: vertical;
+  padding: 20px;
+}
+
+.formSection {
+  padding: 30px 0;
+  background-color: #4d744c;
+}
+
+.checkbox._error .checkbox__label::before {
+  -webkit-box-shadow: 0 0 20px rgba(255, 0, 0, 0.801);
+          box-shadow: 0 0 20px rgba(255, 0, 0, 0.801);
+}
+
+.form__body {
+  position: relative;
+}
+.form__body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(133, 125, 148, 0.787) url(https://64.media.tumblr.com/tumblr_ma9n5kilwp1qc4uvwo1_400.gifv) center/250px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.form__body._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+.form__title {
+  font-size: 30px;
+  line-height: 45px;
+  font-weight: 700;
+  margin: 0px 0px 30px 0px;
+}
+.form__item {
+  margin: 0px 0px 20px 0px;
+}
+.form__label {
+  font-size: 18px;
+  display: block;
+  margin: 0px 0px 10px 0px;
+}
+.form__input {
+  height: 50px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  width: 450px;
+  font-size: 18px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: black;
+}
+.form__input:focus {
+  -webkit-box-shadow: 0 0 20px rgba(29, 212, 59, 0.692);
+          box-shadow: 0 0 20px rgba(29, 212, 59, 0.692);
+}
+.form__input._error {
+  -webkit-box-shadow: 0 0 20px rgba(255, 0, 0, 0.801);
+          box-shadow: 0 0 20px rgba(255, 0, 0, 0.801);
+}
+.form__button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 60px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: rgba(52, 97, 52, 0.842);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-transition: background-color 0.4s ease 0s;
+  transition: background-color 0.4s ease 0s;
+  position: relative;
+  top: 0;
+}
+.form__button:hover {
+  background-color: rgba(32, 58, 32, 0.842);
+}
+.form__button:active {
+  top: 3px;
+}
+.form__columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.checkbox__input {
+  display: none;
+}
+.checkbox__input:checked + .checkbox__label::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.checkbox__label {
+  font-size: 16px;
+  line-height: 140%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.checkbox__label::before {
+  content: "";
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 22px;
+          flex: 0 0 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin: 0px 10px 0px 0px;
+}
+.checkbox__label::after {
+  -webkit-transition: -webkit-transform 0.4s ease 0s;
+  transition: -webkit-transform 0.4s ease 0s;
+  transition: transform 0.4s ease 0s;
+  transition: transform 0.4s ease 0s, -webkit-transform 0.4s ease 0s;
+  content: "";
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: rgba(29, 161, 106, 0.623);
+  border-radius: 4px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.checkbox__label a {
+  color: rgba(35, 187, 124, 0.623);
+}
+
+@media (max-width: 525px) {
+  .form__title {
+    font-size: 20px;
+    line-height: 35px;
+    font-weight: 600;
+    margin: 0px 0px 20px 0px;
+  }
+  .form__input {
+    width: 350px;
+  }
+  .form__button {
+    min-height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 425px) {
+  .form__input {
+    width: 250px;
+  }
+}
