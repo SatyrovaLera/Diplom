@@ -24,7 +24,17 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Mistake');
       }
     } else {
-      alert('Fill in required fields');
+      $('.alert-form').removeClass('hide');
+      $('.alert-form').addClass('show');
+      $('.alert-form').addClass('showAlert');
+      setTimeout(function () {
+        $('.alert-form').addClass('hide');
+        $('.alert-form').removeClass('show');
+      }, 3000);
+      $('.closeForm').click(function () {
+        $('.alert-form').addClass('hide');
+        $('.alert-form').removeClass('show');
+      }); // Автоматическое исчезновение уведомления.
       form.classList.remove('_sending');
     }
   }
@@ -39,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
       formRemoveError(input);
 
       if (input.classList.contains('._email')) {
-        if (!emailTest(input)) {
+        if (emailTest(input)) {
           formAddError(input);
           error++;
         }

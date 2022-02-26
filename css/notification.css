@@ -1,4 +1,4 @@
-.alert, .alert-letters {
+.alert, .alert-letters, .alert-form {
   background: #f4d4d3;
   padding: 20px 40px;
   width: 420px;
@@ -12,19 +12,19 @@
   pointer-events: none;
   z-index: 120;
 }
-.alert.showAlert, .alert-letters.showAlert {
+.alert.showAlert, .alert-letters.showAlert, .alert-form.showAlert {
   opacity: 1;
   pointer-events: auto;
 }
-.alert.show, .alert-letters.show {
+.alert.show, .alert-letters.show, .alert-form.show {
   -webkit-animation: show_slide 1s ease forwards;
           animation: show_slide 1s ease forwards;
 }
-.alert.hide, .alert-letters.hide {
+.alert.hide, .alert-letters.hide, .alert-form.hide {
   -webkit-animation: hide_slide 1s ease forwards;
           animation: hide_slide 1s ease forwards;
 }
-.alert .fa-exclamation-circle, .alert-letters .fa-exclamation-circle {
+.alert .fa-exclamation-circle, .alert-letters .fa-exclamation-circle, .alert-form .fa-exclamation-circle {
   position: absolute;
   left: 20px;
   top: 50%;
@@ -33,12 +33,12 @@
   color: #6b0003;
   font-size: 30px;
 }
-.alert .msg, .alert-letters .msg {
+.alert .msg, .alert-letters .msg, .alert-form .msg {
   padding: 0 20px;
   font-size: 18px;
   color: #6b0003;
 }
-.alert .close-btn, .alert-letters .close-btn {
+.alert .close-btn, .alert-letters .close-btn, .alert-form .close-btn {
   position: absolute;
   right: 0;
   top: 50%;
@@ -48,10 +48,10 @@
   padding: 20px 18px;
   cursor: pointer;
 }
-.alert .close-btn:hover, .alert-letters .close-btn:hover {
+.alert .close-btn:hover, .alert-letters .close-btn:hover, .alert-form .close-btn:hover {
   background: #e9635e;
 }
-.alert .close-btn .fa-times, .alert-letters .close-btn .fa-times {
+.alert .close-btn .fa-times, .alert-letters .close-btn .fa-times, .alert-form .close-btn .fa-times {
   color: #6b0003;
   font-size: 22px;
   line-height: 40px;
